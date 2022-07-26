@@ -33,16 +33,36 @@ body {
 
 #screen {
   width: 425px;
-  height: 75px;
+  height: 100px;
   flex-shrink: 0;
   border-radius: 25px;
-  margin-top: 50px;
   
   background-color: #003049;
   color: #EAE2B7;
 
   font-size: 48px;
   text-align: right;
-  line-height: 75px;
+  line-height: 100px;
   padding-right: 15px;
 }
+
+#navigation-button-container {
+  width: 425px;
+  height: 75px;
+  margin: 20px 0px;
+
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+
+#math-button-container {
+  width: 425px;
+  height: 400px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: grey;
+}
+
