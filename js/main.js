@@ -4,10 +4,40 @@ function getInput() {
   const buttons = document.querySelectorAll('button');
   buttons.forEach(button => {
     button.addEventListener('click', event => {
-      console.log(event.target.id);
+      let input = event.target.id;
+      switch (input) {
+        case 'add':
+          console.log('pending');
+          break;
+        case 'subtract':
+          console.log('pending');
+          break;
+        case 'multiply':
+          console.log('pending');
+          break;
+        case 'divide':
+          console.log('pending');
+          break;
+        case 'equals':
+          console.log('pending');
+          break;
+        case 'claer':
+          console.log('pending');
+          break;
+        case 'delete':
+          console.log('pending');
+          break;
+        default:
+          display(input);
+      }
     });
   });
 }
+
+function display(value) {
+  const screen = document.querySelector('#screen');
+}
+
 
 function operate(a, operator, b) {
   switch (operator) {
