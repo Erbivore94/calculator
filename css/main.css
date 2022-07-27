@@ -53,9 +53,10 @@ body {
   justify-content: space-between;
 }
 
-#navigation-button-container .button {
+#navigation-button-container button {
   width: 162.5px;
   border-radius: 20px;
+  border: none;
 
   background-color: #D62828;
   color: #EAE2B7;  
@@ -72,10 +73,11 @@ body {
   flex-wrap: wrap;
 }
 
-#math-button-container .button {
+#math-button-container button {
   height: 76.25px;
   width: 76.25px;
   border-radius: 25px;
+  border: none;
 
   background-color: #F77F00;
   color: #EAE2B7;  
