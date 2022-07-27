@@ -1,3 +1,14 @@
+getInput();
+
+function getInput() {
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach(button => {
+    button.addEventListener('click', event => {
+      console.log(event.target.id);
+    });
+  });
+}
+
 function operate(a, operator, b) {
   switch (operator) {
     case '+':
