@@ -66,6 +66,14 @@ body {
   text-align: center;
 }
 
+#navigation-button-container button:hover {
+  background-color: #CA2834;
+}
+
+#navigation-button-container button:active {
+  background-color: #BD2841;
+}
+
 #math-button-container {
   display: flex;
   flex-direction: row;
@@ -85,4 +93,12 @@ body {
   line-height: 76.25px;
   font-size: 32px;
   text-align: center;
+}
+
+#math-button-container button:hover {
+  background-color: #F76D00;
+}
+
+#math-button-container button:active {
+  background-color: #F75B00;
 }
