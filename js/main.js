@@ -5,7 +5,6 @@ let operator;
 
 operandALocked = false; // This prevents the user from changing operandA after the first operation has been completed. At that point, operandA is the result of the previous operation.
 
-
 getInput();
 
 function getInput() {
@@ -17,29 +16,29 @@ function getInput() {
         case 'add':
           if (operandA) operator = input;
           if (operandA && operator && operandB) {
-            operator = input;
             operate(operandA, operator, operandB);
+            operator = input;
           }
           break;
         case 'subtract':
           if (operandA) operator = input;
           if (operandA && operator && operandB) {
-            operator = input;
             operate(operandA, operator, operandB);
+            operator = input;
           }
           break;
         case 'multiply':
           if (operandA) operator = input;
           if (operandA && operator && operandB) {
-            operator = input;
             operate(operandA, operator, operandB);
+            operator = input;
           }
           break;
         case 'divide':
           if (operandA) operator = input;
           if (operandA && operator && operandB) {
-            operator = input;
             operate(operandA, operator, operandB);
+            operator = input;
           }
           break;
         case 'equals':
