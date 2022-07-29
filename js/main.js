@@ -24,7 +24,7 @@ function getInput() {
           if (operandA) operator = input;
           break;
         case 'equals':
-          if (operandA) operator = input;
+          if (operandA && operator && operandB) buildEquation();
           break;
         case 'clear':
           clear();
@@ -40,16 +40,16 @@ function getInput() {
 }
 
 function display(value) {
-  if (screen.textContent.length < 11) {
-    if (value !== '.') {
-      screen.textContent += value;
-    } else if (!screen.textContent.includes('.')) {
-      screen.textContent += value;
+  if (!operator) {
+    if (screen.textContent.length < 11) {
+      if (value !== '.') {
+        screen.textContent += value;
+      } else if (!screen.textContent.includes('.')) {
+        screen.textContent += value;
+      }
+    operandA = screen.textContent;
     }
-  operandA = screen.textContent;
-  }
-
-  if (operator) {
+  } else {
     screen.textContent = operandB;
     if (screen.textContent.length < 11) {
       if (value !== '.') {
@@ -62,13 +62,17 @@ function display(value) {
   }
 }
 
-function buildEquation() {
-
+function buildEquation(operandA, operator, operandB) {
+  let operation = {
+    operandA,
+    operator,
+    operandB,
+  }
+  operate(operation);
 }
 
-
-function operate(a, operator, b) {
-  switch (operator) {
+function operate(operation) {
+  switch (operation.operator) {
     case '+':
       return add(a, b);
     case '-':
