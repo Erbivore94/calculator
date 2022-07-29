@@ -28,7 +28,7 @@ function getInput() {
           clear();
           break;
         case 'delete':
-          console.log('pending');
+          del();
           break;
         default:
           display(input);
@@ -46,11 +46,6 @@ function display(value) {
     }
   displayValue = screen.textContent;
   }
-}
-
-function clear() {
-  screen.textContent = '';
-  displayValue = screen.textContent;
 }
 
 function operate(a, operator, b) {
@@ -82,4 +77,14 @@ function multiply(a, b) {
 
 function divide(a, b) {
   return a / b;
+}
+
+function clear() {
+  screen.textContent = '';
+  displayValue = screen.textContent;
+}
+
+function del() {
+  screen.textContent = screen.textContent.slice(0, -1);
+  displayValue = screen.textContent;
 }
