@@ -16,15 +16,31 @@ function getInput() {
       switch (input) {
         case 'add':
           if (operandA) operator = input;
+          if (operandA && operator && operandB) {
+            operator = input;
+            operate(operandA, operator, operandB);
+          }
           break;
         case 'subtract':
           if (operandA) operator = input;
+          if (operandA && operator && operandB) {
+            operator = input;
+            operate(operandA, operator, operandB);
+          }
           break;
         case 'multiply':
           if (operandA) operator = input;
+          if (operandA && operator && operandB) {
+            operator = input;
+            operate(operandA, operator, operandB);
+          }
           break;
         case 'divide':
           if (operandA) operator = input;
+          if (operandA && operator && operandB) {
+            operator = input;
+            operate(operandA, operator, operandB);
+          }
           break;
         case 'equals':
           if (operandA && operator && operandB) operate(operandA, operator, operandB);
