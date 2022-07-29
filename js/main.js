@@ -3,6 +3,9 @@ let operandA;
 let operandB;
 let operator;
 
+operandALocked = false; // This prevents the user from changing operandA after the first operation has been completed. At that point, operandA is the result of the previous operation.
+
+
 getInput();
 
 function getInput() {
@@ -40,7 +43,7 @@ function getInput() {
 }
 
 function display(value) {
-  if (!operator) {
+  if (!operator && !operandALocked) {
     if (screen.textContent.length < 11) {
       if (value !== '.') {
         screen.textContent += value;
@@ -49,7 +52,7 @@ function display(value) {
       }
     operandA = screen.textContent;
     }
-  } else {
+  } else if (operator) {
     screen.textContent = operandB;
     if (screen.textContent.length < 11) {
       if (value !== '.') {
@@ -65,16 +68,31 @@ function display(value) {
 function operate(a, operator, b) {
   switch (operator) {
     case 'add':
-      return add(a, b);
+      add(a, b);
+      prepNextOperation();
+      break;
     case 'subtract':
-      return subtract(a, b);
+      subtract(a, b);
+      prepNextOperation();
+      break
     case 'multiply':
-      return multiply(a, b);
+      multiply(a, b);
+      prepNextOperation();
+      break;
     case 'divide':
-      return divide(a, b);
+      divide(a, b);
+      prepNextOperation();
+      break;
     default:
       console.log("ERROR");
   }
+}
+
+function prepNextOperation() {
+  operandA = screen.textContent;
+  operandALocked = true;
+  operator = null;
+  operandB = null;
 }
 
 function add(a, b) {
@@ -100,6 +118,7 @@ function divide(a, b) {
 function clear() {
   operator = null;
   operandA = null;
+  operandALocked = false;
   operandB = null;
   screen.textContent = null;
 }
