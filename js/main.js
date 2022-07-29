@@ -74,13 +74,13 @@ function buildEquation(operandA, operator, operandB) {
 function operate(operation) {
   switch (operation.operator) {
     case '+':
-      return add(a, b);
+      return add(operation.operandA, operation.operandB);
     case '-':
-      return subtract(a, b);
+      return subtract(operation.operandA, operation.operandB);
     case '*':
-      return multiply(a, b);
+      return multiply(operation.operandA, operation.operandB);
     case '/':
-      return divide(a, b);
+      return divide(operation.operandA, operation.operandB);
     default:
       console.log("ERROR");
   }
