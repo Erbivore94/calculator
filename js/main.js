@@ -1,5 +1,7 @@
 const screen = document.querySelector('#screen');
-let displayValue;
+let operandA;
+let operandB;
+let operator;
 
 getInput();
 
@@ -10,19 +12,19 @@ function getInput() {
       let input = event.target.id;
       switch (input) {
         case 'add':
-          console.log('pending');
+          if (operandA) operator = input;
           break;
         case 'subtract':
-          console.log('pending');
+          if (operandA) operator = input;
           break;
         case 'multiply':
-          console.log('pending');
+          if (operandA) operator = input;
           break;
         case 'divide':
-          console.log('pending');
+          if (operandA) operator = input;
           break;
         case 'equals':
-          console.log('pending');
+          if (operandA) operator = input;
           break;
         case 'clear':
           clear();
@@ -44,9 +46,26 @@ function display(value) {
     } else if (!screen.textContent.includes('.')) {
       screen.textContent += value;
     }
-  displayValue = screen.textContent;
+  operandA = screen.textContent;
+  }
+
+  if (operator) {
+    screen.textContent = operandB;
+    if (screen.textContent.length < 11) {
+      if (value !== '.') {
+        screen.textContent += value;
+      } else if (!screen.textContent.includes('.')) {
+        screen.textContent += value;
+      }
+    operandB = screen.textContent;
+    }
   }
 }
+
+function buildEquation() {
+
+}
+
 
 function operate(a, operator, b) {
   switch (operator) {
@@ -80,11 +99,18 @@ function divide(a, b) {
 }
 
 function clear() {
-  screen.textContent = '';
-  displayValue = screen.textContent;
+  operator = null;
+  operandA = null;
+  operandB = null;
+  screen.textContent = null;
 }
 
 function del() {
-  screen.textContent = screen.textContent.slice(0, -1);
-  displayValue = screen.textContent;
+  if (!operator) {
+    screen.textContent = screen.textContent.slice(0, -1);
+    operandA = screen.textContent;
+  } else {
+    screen.textContent = screen.textContent.slice(0, -1);
+    operandB = screen.textContent;
+  }
 }
