@@ -112,7 +112,7 @@ function prepNextOperation() {
 }
 
 function add(a, b) {
-  screen.textContent = a + b;
+  screen.textContent = Number(a) + Number(b);
 }
 
 function subtract(a, b) {
