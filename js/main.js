@@ -1,6 +1,5 @@
 const screen = document.querySelector('#screen');
 let displayValue;
-let decimalPressed = false;
 
 getInput();
 
@@ -26,7 +25,7 @@ function getInput() {
           console.log('pending');
           break;
         case 'clear':
-          console.log('pending');
+          clear();
           break;
         case 'delete':
           console.log('pending');
@@ -42,12 +41,16 @@ function display(value) {
   if (screen.textContent.length < 11) {
     if (value !== '.') {
       screen.textContent += value;
-    } else if (decimalPressed === false) {
+    } else if (!screen.textContent.includes('.')) {
       screen.textContent += value;
-      decimalPressed = true;
     }
   displayValue = screen.textContent;
   }
+}
+
+function clear() {
+  screen.textContent = '';
+  displayValue = screen.textContent;
 }
 
 function operate(a, operator, b) {
