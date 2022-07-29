@@ -24,7 +24,7 @@ function getInput() {
           if (operandA) operator = input;
           break;
         case 'equals':
-          if (operandA && operator && operandB) buildEquation();
+          if (operandA && operator && operandB) operate(operandA, operator, operandB);
           break;
         case 'clear':
           clear();
@@ -62,40 +62,31 @@ function display(value) {
   }
 }
 
-function buildEquation(operandA, operator, operandB) {
-  let operation = {
-    operandA,
-    operator,
-    operandB,
-  }
-  operate(operation);
-}
-
-function operate(operation) {
-  switch (operation.operator) {
-    case '+':
-      return add(operation.operandA, operation.operandB);
-    case '-':
-      return subtract(operation.operandA, operation.operandB);
-    case '*':
-      return multiply(operation.operandA, operation.operandB);
-    case '/':
-      return divide(operation.operandA, operation.operandB);
+function operate(a, operator, b) {
+  switch (operator) {
+    case 'add':
+      return add(a, b);
+    case 'subtract':
+      return subtract(a, b);
+    case 'multiply':
+      return multiply(a, b);
+    case 'divide':
+      return divide(a, b);
     default:
       console.log("ERROR");
   }
 }
 
 function add(a, b) {
-  return a + b;
+  screen.textContent = a + b;
 }
 
 function subtract(a, b) {
-  return a - b;
+  screen.textContent = a - b;
 }
 
 function multiply(a, b) {
-  return a * b;
+  screen.textContent = a * b;
 }
 
 function divide(a, b) {
@@ -103,7 +94,7 @@ function divide(a, b) {
     screen.textContent = "ERROR";
     clear();
   }
-  return a / b;
+  screen.textContent = a / b;
 }
 
 function clear() {
