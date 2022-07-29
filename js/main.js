@@ -95,6 +95,10 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+  if (b === 0) {
+    screen.textContent = "ERROR";
+    clear();
+  }
   return a / b;
 }
 
