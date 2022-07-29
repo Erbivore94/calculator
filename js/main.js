@@ -111,15 +111,15 @@ function prepNextOperation() {
 }
 
 function add(a, b) {
-  screen.textContent = Number(a) + Number(b);
+  screen.textContent = (Number(a) + Number(b)).toFixed(3);
 }
 
 function subtract(a, b) {
-  screen.textContent = a - b;
+  screen.textContent = (a - b).toFixed(3);
 }
 
 function multiply(a, b) {
-  screen.textContent = a * b;
+  screen.textContent = (a * b).toFixed(3);
 }
 
 function divide(a, b) {
@@ -127,7 +127,7 @@ function divide(a, b) {
     screen.textContent = "ERROR";
     clear();
   }
-  screen.textContent = a / b;
+  screen.textContent = (a / b).toFixed(3);
 }
 
 function clear() {
