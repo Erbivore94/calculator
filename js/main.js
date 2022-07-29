@@ -111,15 +111,21 @@ function prepNextOperation() {
 }
 
 function add(a, b) {
-  screen.textContent = (Number(a) + Number(b)).toFixed(3);
+  let answer = Number(a) + Number(b)
+  answer = Math.round(answer * 100) / 100
+  screen.textContent = answer;
 }
 
 function subtract(a, b) {
-  screen.textContent = (a - b).toFixed(3);
+  let answer = a - b;
+  answer = Math.round(answer * 100) / 100
+  screen.textContent = answer;
 }
 
 function multiply(a, b) {
-  screen.textContent = (a * b).toFixed(3);
+  let answer = a * b;
+  answer = Math.round(answer * 100) / 100
+  screen.textContent = answer;
 }
 
 function divide(a, b) {
@@ -127,7 +133,9 @@ function divide(a, b) {
     screen.textContent = "ERROR";
     clear();
   }
-  screen.textContent = (a / b).toFixed(3);
+  let answer = a / b;
+  answer = Math.round(answer * 100) / 100
+  screen.textContent = answer;
 }
 
 function clear() {
