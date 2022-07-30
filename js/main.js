@@ -147,10 +147,10 @@ function clear() {
 }
 
 function del() {
-  if (!operator) {
+  if (!operator && !operandALocked) {
     screen.textContent = screen.textContent.slice(0, -1);
     operandA = screen.textContent;
-  } else {
+  } else if (operandB) {
     screen.textContent = screen.textContent.slice(0, -1);
     operandB = screen.textContent;
   }
